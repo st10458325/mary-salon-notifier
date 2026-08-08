@@ -2,17 +2,17 @@ name: Booking Notifications
 
 on:
   schedule:
-    - cron: '*/5 * * * *'
-  workflow_dispatch: {}
+    - cron: "*/5 * * * *"
+  workflow_dispatch:
 
 jobs:
   notify:
     runs-on: ubuntu-latest
-    steps:mary-salon-notifier
+    steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
-          node-version: '20'
+          node-version: "20"
       - run: npm install
       - run: node notify.js
         env:
